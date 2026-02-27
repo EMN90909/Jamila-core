@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Synthia - Voice Dictation + AI Assistant for Linux.
+"""Jamila - Voice Dictation + AI Assistant for Linux.
 
 Usage:
     Hold Right Ctrl - Dictation mode (speech to text)
     Hold Right Alt  - Assistant mode (AI voice assistant)
-    Say "Hey Linux" - Wake word (when enabled)
+    Say "Hey Jamila" - Wake word (when enabled)
 """
 
 from __future__ import annotations
@@ -42,10 +42,10 @@ logger = logging.getLogger(__name__)
 
 
 class Synthia:
-    """Main Synthia application."""
+    """Main Jamila application."""
 
     def __init__(self) -> None:
-        logger.info("Starting Synthia...")
+        logger.info("Starting Jamila...")
 
         # Load configuration
         self.config = load_config()
