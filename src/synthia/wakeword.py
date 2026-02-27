@@ -1,4 +1,4 @@
-"""Wake word detection for Synthia.
+"""Wake word detection for Jamila.
 
 Uses a simple approach: continuously listen and check transcription for wake word.
 For production, you'd want something like Porcupine or Snowboy for offline detection.
@@ -25,7 +25,7 @@ class WakeWordDetector:
 
     def __init__(
         self,
-        wake_words: list[str] = ["hey linux", "hey voice", "ok linux"],
+        wake_words: list[str] = ["hey Jamila", "mi amor", "jamila", "jam", "ok jamila"],
         on_wake: Optional[Callable] = None,
         sample_rate: int = 16000,
         chunk_duration: float = 2.0,  # seconds
