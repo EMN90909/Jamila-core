@@ -1,4 +1,4 @@
-"""Hotkey handling for Synthia with Wayland and X11 support.
+"""Hotkey handling for Jamila with Wayland and X11 support.
 
 On Wayland: Uses evdev to read directly from input devices.
 On X11: Uses pynput for global keyboard hooks.
