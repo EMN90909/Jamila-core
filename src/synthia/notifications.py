@@ -43,9 +43,9 @@ def notify(
 
 
 def notify_ready():
-    """Notify that Synthia is ready."""
+    """Notify that Jamila is ready."""
     notify(
-        "Synthia",
+        "Jami,a",
         "Ready! Hold Right Ctrl to dictate, Right Alt for assistant.",
         "audio-input-microphone",
     )
