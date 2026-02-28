@@ -1,11 +1,12 @@
 #!/bin/bash
 # ============================================================================
-# Synthia Installation Script
+# Jamila Installation Script (visual/name changes only)
 # Version: 0.1.0
 #
-# This script sets up Synthia - a voice-controlled Claude Code companion
+# This script sets up Synthia (display name: Jamila) - a voice-controlled AI
+# companion. Filenames and internal config paths that reference "synthia"
+# remain unchanged to avoid breaking the install.
 # ============================================================================
-
 set -e
 
 # Colors
@@ -19,13 +20,13 @@ NC='\033[0m'
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo -e "${CYAN}"
-echo "  ____  _   _ _   _ _____ _   _ ___    _    "
-echo " / ___|| | | | \ | |_   _| | | |_ _|  / \   "
-echo " \___ \| |_| |  \| | | | | |_| || |  / _ \  "
-echo "  ___) |  _  | |\  | | | |  _  || | / ___ \ "
-echo " |____/|_| |_|_| \_| |_| |_| |_|___/_/   \_\\"
+echo "  ____   _    _ _ _       "
+echo " |  _ \ / \  | | | |      "
+echo " | |_) / _ \ | | | |      "
+echo " |  __/ ___ \| | | |___   "
+echo " |_| /_/   \_\_|_|_____|  "
 echo -e "${NC}"
-echo -e "${BLUE}Voice-Controlled Claude Code Companion${NC}"
+echo -e "${BLUE}Jamila — Voice-Controlled AI assistant${NC}"
 echo ""
 
 # ============================================================================
@@ -35,8 +36,8 @@ echo -e "${BLUE}Checking system requirements...${NC}"
 
 # Check OS
 if [[ "$OSTYPE" != "linux-gnu"* ]]; then
-    echo -e "${RED}Error: Synthia currently only supports Linux.${NC}"
-    echo "macOS and Windows support coming in v0.3"
+    echo -e "${RED}Error: Jamila currently only supports Linux.${NC}"
+    echo "macOS and Windows support coming in v1.0"
     exit 1
 fi
 echo -e "  ${GREEN}✓${NC} Linux detected"
@@ -97,15 +98,15 @@ pip install --upgrade pip wheel setuptools -q
 echo -e "  ${GREEN}✓${NC} Virtual environment created"
 
 # ============================================================================
-# Install Synthia package
+# Install Synthia package (package and internal filenames remain 'synthia')
 # ============================================================================
-echo -e "${BLUE}Installing Synthia...${NC}"
+echo -e "${BLUE}Installing Jamila (installer display name only)...${NC}"
 pip install -e "$SCRIPT_DIR[all]" -q
 
 # Fix broken piper-tts packaging (missing pathvalidate dependency)
 pip install pathvalidate -q
 
-echo -e "  ${GREEN}✓${NC} Synthia package installed"
+echo -e "  ${GREEN}✓${NC} Package installed"
 
 # ============================================================================
 # Download Whisper model (for speech recognition)
@@ -163,7 +164,9 @@ mkdir -p "$CONFIG_DIR"
 
 if [ ! -f "$CONFIG_DIR/config.yaml" ]; then
     cat > "$CONFIG_DIR/config.yaml" << 'EOF'
-# Synthia Configuration
+# Synthia Configuration (installer display name: Jamila)
+# NOTE: internal paths and executable names remain "synthia" to avoid breaking
+# existing scripts. These are additional settings to prefer OpenRouter/Gemini.
 
 # Hotkeys
 dictation_key: "Key.ctrl_r"      # Hold for Dev Mode (Claude Code)
@@ -189,8 +192,15 @@ memory_enabled: true
 memory_auto_retrieve: false
 memory_dir: "~/.claude/memory"
 
-# Claude Code Integration
+# Claude Code Integration (kept for compatibility)
 claude_hooks_enabled: true
+
+# --- New: OpenRouter / Gemini settings (preferred AI backend) ---
+# Use OpenRouter to access Gemini models (configure your OpenRouter API key)
+ai_backend: "openrouter"         # options: claude, openrouter, ollama
+openrouter_enabled: true
+openrouter_api_key: ""           # <-- Paste your OpenRouter API key here
+openrouter_model: "gemini-2.5-pro"
 
 # UI
 show_notifications: true
@@ -273,34 +283,20 @@ fi
 # Claude Code Integration (optional)
 # ============================================================================
 echo ""
-echo -e "${BLUE}Claude Code Integration${NC}"
-echo -e "Add a hook so Claude speaks responses aloud?"
-read -p "(y/n) " -n 1 -r
+echo -e "${BLUE}AI / Model Integration${NC}"
+echo -e "You can hook Jamila to different backends. OpenRouter (Gemini) is preferred in the config."
+read -p "Would you like instructions to configure OpenRouter/Gemini now? (y/n) " -n 1 -r
 echo
 
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-    CLAUDE_SETTINGS="$HOME/.claude/settings.json"
-
-    if [ -f "$CLAUDE_SETTINGS" ]; then
-        # Check if hook already exists
-        if grep -q "stop-hook.py" "$CLAUDE_SETTINGS" 2>/dev/null; then
-            echo -e "  ${GREEN}✓${NC} Hook already configured"
-        else
-            echo -e "  ${YELLOW}Please add this to your ~/.claude/settings.json hooks:${NC}"
-            echo ""
-            echo -e "${CYAN}\"Stop\": [{
-  \"hooks\": [{
-    \"type\": \"command\",
-    \"command\": \"$SCRIPT_DIR/venv/bin/python $SCRIPT_DIR/src/synthia/hooks/stop-hook.py\",
-    \"timeout\": 30
-  }]
-}]${NC}"
-            echo ""
-        fi
-    else
-        echo -e "  ${YELLOW}Claude Code settings not found.${NC}"
-        echo -e "  Run Claude Code once, then re-run this script to configure hooks."
-    fi
+    echo ""
+    echo -e "${CYAN}To use OpenRouter (Gemini) paste your OpenRouter API key into:${NC}"
+    echo -e "  ${YELLOW}$CONFIG_DIR/config.yaml${NC}"
+    echo -e "set: openrouter_api_key: \"YOUR_KEY_HERE\""
+    echo ""
+    echo -e "${CYAN}OpenRouter model key (example):${NC} openrouter_model: \"gemini-2.5-pro\""
+    echo ""
+    echo -e "${YELLOW}If you prefer Claude hooks, those settings remain available (claude_hooks_enabled).${NC}"
 fi
 
 # ============================================================================
@@ -312,7 +308,7 @@ echo -e "${GREEN}   Installation Complete!${NC}"
 echo -e "${GREEN}============================================${NC}"
 echo ""
 echo -e "Available commands:"
-echo -e "  ${CYAN}synthia${NC}       - Start voice assistant"
+echo -e "  ${CYAN}synthia${NC}       - Start voice assistant (internal executable remains 'synthia')"
 echo -e "  ${CYAN}synthia-dash${NC}  - Open TUI dashboard"
 if [ -f "$HOME/.local/bin/synthia-gui" ]; then
 echo -e "  ${CYAN}synthia-gui${NC}   - Launch desktop app"
@@ -325,5 +321,5 @@ echo ""
 echo -e "${YELLOW}Restart your terminal or run:${NC}"
 echo -e "  source ~/.bashrc  ${CYAN}# or ~/.zshrc${NC}"
 echo ""
-echo -e "Then start Synthia with: ${CYAN}./run.sh${NC}"
+echo -e "Then start Jamila (interface/name): ${CYAN}./run.sh${NC}"
 echo ""
