@@ -1,23 +1,19 @@
-# SYNTHIA
+# JAMILA
 
-**Talk to your code. Manage your workflow. From anywhere.**
-
-Free open-source Claude Code companion for Linux. Voice control, persistent memory, and a full configuration dashboard — all in one toolkit. Your data stays home.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+**Talk to your code. Navigate your PC. From anywhere.**  
+**Built for users with visual impairments and developers who value privacy — full access via subscription.**
+[![Paid License](https://img.shields.io/badge/License-Commercial-blue.svg)](https://jamilaAI.onrender.com/pricing)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Rust](https://img.shields.io/badge/rust-1.70+-orange.svg)](https://www.rust-lang.org/)
 [![Linux](https://img.shields.io/badge/platform-Linux-blue.svg)](https://www.linux.org/)
 
 ---
 
-## Why SYNTHIA?
+## Why JAMILA?
 
-Your voice never leaves your machine. Your memories stay organized. Your Claude Code config stays in check.
+Your voice never leaves your machine. Your memories stay organized.
 
 - **100% Local** — Whisper runs on your hardware. No servers. No logs. Pinky promise.
-- **Free Forever** — MIT licensed. No paywalls. No "premium tier" upsell.
-- **Claude Code Companion** — Voice control, persistent memory, and a TUI dashboard for agents, commands, hooks, and settings.
 - **Memory Layer** — Store bugs, patterns, architecture decisions, and gotchas. Never re-learn the same lesson twice.
 
 ---
@@ -77,7 +73,6 @@ Hold **Right Alt**, say something, and watch the magic happen.
 | Component | Technology | Why It's Great |
 |-----------|------------|----------------|
 | Speech Recognition | [Faster-Whisper](https://github.com/guillaumekln/faster-whisper) | OpenAI's Whisper, but 4x faster |
-| AI Brain | [Ollama](https://ollama.ai) + Qwen 2.5 | Local LLM, no API keys needed |
 | Voice Output | [Piper](https://github.com/rhasspy/piper) | Sounds like a human, not a GPS from 2008 |
 | Dashboard TUI | [Textual](https://textual.textualize.io) | Beautiful terminal UI, keyboard-first |
 | Desktop GUI | [Tauri](https://tauri.app) + Rust | Native performance, tiny footprint |
@@ -486,7 +481,7 @@ Download from [Piper Voices](https://huggingface.co/rhasspy/piper-voices):
 
 ## Requirements
 
-- **OS**: Linux (macOS/Windows coming in v0.3)
+- **OS**: Linux (macOS/Windows coming in v1.0)
 - **Python**: 3.10+
 - **Rust**: 1.70+ (for GUI)
 - **RAM**: 4GB minimum and a pulse. 8GB recommended.
@@ -525,8 +520,8 @@ Check out [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
 ## FAQ
 
-**Is it really free?**
-Yep. Free as in beer, free as in speech, free as in "wait, what's the catch?" There is no catch.
+**Is it really free?**  
+Not quite — Jamila is a premium companion. Free trials will exist, but full access requires a subscription. Think of it like paying for coffee: it keeps the magic flowing.
 
 **Does my voice leave my computer?**
 Absolutely not. Your voice stays on your machine like it's under house arrest.
@@ -538,17 +533,16 @@ Totally. Like a Honda Civic. Reliable. Gets the job done. Won't win races but ne
 
 ## License
 
-MIT — Fork it. Break it. Fix it. Make it weird. It's yours now.
+Commercial
 
 ---
 
 ## Support the Project
 
-SYNTHIA runs on open source spirit and actual coffee. If it saves you time, consider:
+Jamila runs on open source under commercial licensing spirit and actual coffee. If it saves you time, consider:
 
 - **Starring on GitHub** — free and helps others find us
-- **Buying us a coffee** — [synthia-ai.com/#donate](https://synthia-ai.com/#donate)
-
+[![Paid License](https://img.shields.io/badge/License-Commercial-blue.svg)](https://jamilaai.onrender.com/pricing)  
+☕ [Buy me a coffee](https://jamilaai.onrender.com)
 ---
-
-**Built for developers who value privacy and hate typing (sometimes).**
+**Built for developers and users with visual impairments — helping everyone navigate their PC more comfortably, while keeping privacy and efficiency first.**
