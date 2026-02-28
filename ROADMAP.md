@@ -1,6 +1,6 @@
-# Synthia Roadmap
+# Jamila Roadmap
 
-This document outlines the planned features and direction for Synthia. We welcome community input and contributions!
+This document outlines the planned features and direction for **Jamila**. We welcome community input and contributions!
 
 ---
 
@@ -12,7 +12,7 @@ This document outlines the planned features and direction for Synthia. We welcom
 - App launching, volume control, system commands
 - Local TTS with Piper voices
 - GPU-accelerated Whisper transcription
-- Claude Code integration (voice responses)
+- Gemini / OpenRouter integration (voice responses)
 - Telegram remote control (Dev Mode)
 - Quick Mode (local assistant) / Dev Mode (AI coding assistant)
 
@@ -37,14 +37,13 @@ This document outlines the planned features and direction for Synthia. We welcom
 
 ### Enhanced Dictation Mode
 - [ ] **Smart transcription polish** - AI post-processing layer that reviews dictation output to fix grammar, unclear phrasing, and weird word artifacts before final output
-- [ ] **Custom word dictionary** - User-configurable word replacements (e.g., "Cynthia" → "Synthia") to correct consistent Whisper misrecognitions
+- [ ] **Custom word dictionary** - User-configurable word replacements (e.g., "Jamila" → "Jamila") to correct consistent Whisper misrecognitions
 
 ### Improved Dev Mode
 - [ ] Easy terminal session selection for remote control
 - [ ] Support for multiple AI coding platforms:
-  - [ ] Claude Code
+  - [ ] Gemini (via OpenRouter)
   - [ ] GitHub Copilot
-  - [ ] Google Gemini
   - [ ] OpenAI Codex
   - [ ] Cursor
 - [ ] Session history and replay
@@ -138,7 +137,7 @@ Replacing Telegram bot with native experience:
 
 ### Mobile Features
 - [ ] Remote PC control (like current Telegram)
-- [ ] View Claude Code responses
+- [ ] View Gemini responses
 - [ ] Approve/reject plans remotely
 - [ ] Screenshot viewing
 - [ ] System status monitoring
@@ -148,7 +147,7 @@ Replacing Telegram bot with native experience:
 ## Phase 5: Advanced Features (v1.0)
 
 ### Voice & Audio
-- [ ] Custom wake word ("Hey Synthia")
+- [ ] Custom wake word ("Hey Jamila")
 - [ ] Speaker diarization (multi-person transcription)
 - [ ] Voice cloning for TTS
 - [ ] Noise cancellation improvements
