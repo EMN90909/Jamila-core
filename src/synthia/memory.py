@@ -1,4 +1,4 @@
-"""Memory system for Synthia - persistent knowledge storage and retrieval.
+"""Memory system for Jamila - persistent knowledge storage and retrieval.
 
 This module provides a tag-based JSONL memory system for storing:
 - Bugs: Error → cause → fix mappings
