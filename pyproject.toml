@@ -3,8 +3,8 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "synthia"
-version = "0.1.0"
+name = "Jamila"
+version = "0.1.4"
 description = "AI-powered voice assistant that respects your privacy"
 readme = "README.md"
 license = {text = "MIT"}
@@ -16,7 +16,7 @@ classifiers = [
     "Development Status :: 3 - Alpha",
     "Environment :: X11 Applications",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
+    "License :: Emtra:: Proprietary Licence",
     "Operating System :: POSIX :: Linux",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
@@ -65,9 +65,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/markmiddo/synthia"
-Repository = "https://github.com/markmiddo/synthia"
-Issues = "https://github.com/markmiddo/synthia/issues"
+Homepage = "https://github.com/EMN90909/Jamila-core"
+Repository = "https://github.com/EMN90909/Jamila-core"
+Issues = "https://github.com/EMN90909/Jamila-core/issues"
 
 [project.scripts]
 synthia = "synthia.main:main"
